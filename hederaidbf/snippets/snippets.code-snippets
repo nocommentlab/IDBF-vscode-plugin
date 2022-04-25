@@ -1,0 +1,151 @@
+{
+		"hedera_idbf_header": {
+		"prefix": "hedera idbf header",
+		"body": [
+			"---\r",
+			"information:\r",
+			"  guid: $1\r",
+			"  author: $2\r",
+			"  date: ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}\r",
+			"  modified: ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}\r",
+			"  status: experimental\r",
+			"  description: $3"
+		],
+		"description": "Generates the IDBF basic headers"
+	},
+	"hedera_thehive_case_and_procedures": {
+		"prefix": "hedera thehive case and procedures",
+		"body": [
+			"the_hive:\r",
+			"  case:\r",
+			"    title: \"[{{machine_name}}] - $1\"\r",
+			"    description: $2\r",
+			"    pap: $3\r",
+			"    tlp: $4\r",
+			"    severity: $5\r",
+			"    tags:\r",
+			"      - $6\r",
+			"  procedures:\r",
+			"    - tactic: $7\r",
+			"      pattern_id: $8\r",
+			"      description: $9"
+		],
+		"description": "Generates the TheHive case and procedures IDBF file section"
+	},
+	"hedera_idbf_indicators": {
+		"prefix": "hedera idbf indicators",
+		"body": [
+			"indicators:\r",
+			"  registry:\r",
+			"    $1\r",
+			"  file:\r",
+			"    $2\r",
+			"  pipe:\r",
+			"    $3\r",
+			"  process:\r",
+			"    $4"
+		],
+		"description": "Generates the indicators IDBF file section"
+	},
+	"hedera_indicator_observable": {
+		"prefix": "hedera indicator observable",
+		"body": [
+			"observable:\r",
+			"  tlp: $1\r",
+			"  ioc: $2\r",
+			"  sighted: $3\r",
+			"  tags:\r",
+			"    - $4\r",
+			"  message: $5"
+		],
+		"description": "Generates the observable section"
+	},
+
+"hedera_registry_value_exists": {
+	"prefix": "hedera registry value exists",
+	"body": [
+		"- type: value_exists\r",
+		"  guid: $UUID\r",
+		"  base_key: ${1|HKEY_USERS,HKEY_LOCAL_MACHINE,HKEY_CURRENT_CONFIG,HKEY_CLASSES_ROOT,HKEY_CURRENT_USER,HKEY_PERFORMANCE_DATA|}\r",
+		"  key: '$2'\r",
+		"  value_name: ${3:supports RegEx}\r",
+		"  value_data: ${4:supports RegeEx}\r",
+		"  is_recursive: ${5|false,true|}"
+	],
+	"description": "Checks if exist a registry value"
+},
+"hedera_file_exist": {
+	"prefix": "hedera file exists",
+	"body": [
+		"- type: exists\r",
+		"  guid: $UUID\r",
+		"  path: $1\r",
+		"  name: ${2:supports RegEx}\r",
+		"  is_recursive: ${3|false,true|}"
+	],
+	"description": "description for hedera_file_exists"
+},
+"hedera_file_hash": {
+	"prefix": "hedera file hash",
+	"body": [
+		"- type: ${1|sha256hash,imphash|}\r",
+		"  guid: $UUID\r",
+		"  path: $2\r",
+		"  name: ${3:supports RegEx}\r",
+		"  value: $4\r",
+		"  is_recursive: ${5|false,true|}"
+	],
+	"description": "description for hedera_file_sha256hash"
+},
+"hedera_file_yara": {
+	"prefix": "hedera file yara",
+	"body": [
+		"- type: yara\r",
+		"  guid: $UUID\r",
+		"  path: $1\r",
+		"  name: ${2:supports RegEx}\r",
+		"  rule: $3\r",
+		"  is_recursive: ${4|false,true|}"
+	],
+	"description": "description for hedera_file_yara"
+},
+"hedera_pipe_exists": {
+	"prefix": "hedera pipe exists",
+	"body": [
+		"- type: exists\r",
+		"  guid: $UUID\r",
+		"  name: ${1:supports RegEx}"
+	],
+	"description": "Generates the pipe exists section with regex"
+},
+"hedera_process_exists": {
+	"prefix": "hedera process exists",
+	"body": [
+		"- type: exists\r",
+		"  guid: $UUID\r",
+		"  name: ${1:supports RegEx}"
+	],
+	"description": "description for "
+},
+"hedera_process_hash": {
+	"prefix": "hedera process hash",
+	"body": [
+		"- type: ${1|sha256hash|}\r",
+		"  guid: $UUID\r",
+		"  name: ${2:supports RegEx}\r",
+		"  value: $3"
+	],
+	"description": "description for hedera_process_hash"
+},
+"hedera_process_yara": {
+	"prefix": "hedera process yara",
+	"body": [
+		"- type: yara\r",
+		"  guid: $UUID\r",
+		"  name: ${1:supports RegEx}\r",
+		"  rule: $2"
+	],
+	"description": "description for hedera_process_yara"
+}
+
+}

@@ -1,0 +1,20 @@
+{
+    "name": "hederaidbf",
+    "displayName": "HederaIDBF",
+    "description": "Hedera IDBF compose helper",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.66.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "yaml",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
