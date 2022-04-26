@@ -4,12 +4,13 @@
 		"body": [
 			"---\r",
 			"information:\r",
-			"  guid: $1\r",
-			"  author: $2\r",
+			"  guid: $UUID\r",
+			"  author: $1\r",
 			"  date: ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}\r",
 			"  modified: ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}\r",
 			"  status: experimental\r",
-			"  description: $3"
+			"  description: $2\r",
+			"$0"
 		],
 		"description": "Generates the IDBF basic headers"
 	},
