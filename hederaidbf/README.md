@@ -1,24 +1,34 @@
 # hederaidbf README
 
-This plugin helps you to generate an IDBF (Indicator DataBase File) for Hedera
+Generates IDBF Hedera file with simplicity.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This plugin helps you to compose an IDBF (Indicator DataBase File) for Hedera; then, you can generate the idbf section using the intellisense.
 
-For example if there is an image subfolder under your extension project workspace:
+![demo_gif](./assets/demo.gif)
 
-\!\[feature X\]\(images/feature-x.png\)
+## How to use
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Select `yaml` as document language;
 
-## Requirements
-
-No additional softwares are required
-
-
+- Start typing `hedera` and select the section that you want to generate.
 ## Release Notes
 
+The below IDBF section are supported:
+
+- hedera_idbf_header
+- hedera_thehive_case_and_procedures
+- hedera_idbf_indicators
+- hedera_indicator_observable
+- hedera_registry_value_exists
+- hedera_file_exist
+- hedera_file_hash
+- hedera_file_yara
+- hedera_pipe_exists
+- hedera_process_exists
+- hedera_process_hash
+- hedera_process_yara 
 
 ### 0.0.1
 
